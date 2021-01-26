@@ -1,36 +1,66 @@
 # -*- coding: UTF-8 -*-
 import numpy as np
 import matplotlib.pyplot as plt
+import platform
 
+define = 11
 ticksize = 30
 legendsize = 20
 titlesize = 30
 font1 = {'family': 'Times New Roman', 'weight': 'normal', 'size': titlesize}
 
-# b1 = np.loadtxt('/mnt/Storage/FileRecv/Navigation/组合导航数据处理/机器人数据/20201009-信操数据/result/11/result.err')
-# b1 = np.reshape(b1, (-1, 10))
-# b2 = np.loadtxt('/mnt/Storage/FileRecv/Navigation/组合导航数据处理/机器人数据/20201009-信操数据/result/22/result.err')
-# b2 = np.reshape(b2, (-1, 10))
-# b3 = np.loadtxt('/mnt/Storage/FileRecv/Navigation/组合导航数据处理/机器人数据/20201009-信操数据/result/33/result.err')
-# b3 = np.reshape(b3, (-1, 10))
-# b4 = np.loadtxt('/mnt/Storage/FileRecv/Navigation/组合导航数据处理/机器人数据/20201009-信操数据/result/44/result.err')
-# b4 = np.reshape(b4, (-1, 10))
-# y_ticks1 = np.arange(-2.5, 3.6, 1)
-# y_ticks11 = np.arange(-2.5, 3.6, 1)
-# y_ticks2 = np.arange(-0.25, 0.26, 0.05)
-# y_ticks3 = np.arange(-1.0, 3.1, 1)
-
-b1 = np.loadtxt('/mnt/Storage/FileRecv/Navigation/组合导航数据处理/机器人数据/20201009-信操数据/result/1/result.err')
-b1 = np.reshape(b1, (-1, 10))
-b2 = np.loadtxt('/mnt/Storage/FileRecv/Navigation/组合导航数据处理/机器人数据/20201009-信操数据/result/2/result.err')
-b2 = np.reshape(b2, (-1, 10))
-b3 = np.loadtxt('/mnt/Storage/FileRecv/Navigation/组合导航数据处理/机器人数据/20201009-信操数据/result/3/result.err')
-b3 = np.reshape(b3, (-1, 10))
-b4 = np.loadtxt('/mnt/Storage/FileRecv/Navigation/组合导航数据处理/机器人数据/20201009-信操数据/result/4/result.err')
-b4 = np.reshape(b4, (-1, 10))
-y_ticks1 = np.arange(-3, 3.1, 1.5)
-y_ticks2 = np.arange(-0.35, 0.51, 0.2)
-y_ticks3 = np.arange(-1.5, 2.6, 1)
+if platform.system() == "Windows":
+    if define == 1:
+        b1 = np.loadtxt('E:/FileRecv/Navigation/组合导航数据处理/机器人数据/20201009-信操数据/result/1/result.err')
+        b1 = np.reshape(b1, (-1, 10))
+        b2 = np.loadtxt('E:/FileRecv/Navigation/组合导航数据处理/机器人数据/20201009-信操数据/result/2/result.err')
+        b2 = np.reshape(b2, (-1, 10))
+        b3 = np.loadtxt('E:/FileRecv/Navigation/组合导航数据处理/机器人数据/20201009-信操数据/result/3/result.err')
+        b3 = np.reshape(b3, (-1, 10))
+        b4 = np.loadtxt('E:/FileRecv/Navigation/组合导航数据处理/机器人数据/20201009-信操数据/result/4/result.err')
+        b4 = np.reshape(b4, (-1, 10))
+        y_ticks1 = np.arange(-3, 3.1, 1.5)
+        y_ticks2 = np.arange(-0.35, 0.51, 0.2)
+        y_ticks3 = np.arange(-1.5, 2.6, 1)
+    else:
+        b1 = np.loadtxt('E:/FileRecv/Navigation/组合导航数据处理/机器人数据/20201009-信操数据/result/11/result.err')
+        b1 = np.reshape(b1, (-1, 10))
+        b2 = np.loadtxt('E:/FileRecv/Navigation/组合导航数据处理/机器人数据/20201009-信操数据/result/22/result.err')
+        b2 = np.reshape(b2, (-1, 10))
+        b3 = np.loadtxt('E:/FileRecv/Navigation/组合导航数据处理/机器人数据/20201009-信操数据/result/33/result.err')
+        b3 = np.reshape(b3, (-1, 10))
+        b4 = np.loadtxt('E:/FileRecv/Navigation/组合导航数据处理/机器人数据/20201009-信操数据/result/44/result.err')
+        b4 = np.reshape(b4, (-1, 10))
+        y_ticks1 = np.arange(-2.5, 3.6, 1)
+        y_ticks11 = np.arange(-2.5, 3.6, 1)
+        y_ticks2 = np.arange(-0.25, 0.26, 0.05)
+        y_ticks3 = np.arange(-1.0, 3.1, 1)
+else:
+    if define == 1:
+        b1 = np.loadtxt('/mnt/Storage/FileRecv/Navigation/组合导航数据处理/机器人数据/20201009-信操数据/result/1/result.err')
+        b1 = np.reshape(b1, (-1, 10))
+        b2 = np.loadtxt('/mnt/Storage/FileRecv/Navigation/组合导航数据处理/机器人数据/20201009-信操数据/result/2/result.err')
+        b2 = np.reshape(b2, (-1, 10))
+        b3 = np.loadtxt('/mnt/Storage/FileRecv/Navigation/组合导航数据处理/机器人数据/20201009-信操数据/result/3/result.err')
+        b3 = np.reshape(b3, (-1, 10))
+        b4 = np.loadtxt('/mnt/Storage/FileRecv/Navigation/组合导航数据处理/机器人数据/20201009-信操数据/result/4/result.err')
+        b4 = np.reshape(b4, (-1, 10))
+        y_ticks1 = np.arange(-3, 3.1, 1.5)
+        y_ticks2 = np.arange(-0.35, 0.51, 0.2)
+        y_ticks3 = np.arange(-1.5, 2.6, 1)
+    else:
+        b1 = np.loadtxt('/mnt/Storage/FileRecv/Navigation/组合导航数据处理/机器人数据/20201009-信操数据/result/11/result.err')
+        b1 = np.reshape(b1, (-1, 10))
+        b2 = np.loadtxt('/mnt/Storage/FileRecv/Navigation/组合导航数据处理/机器人数据/20201009-信操数据/result/22/result.err')
+        b2 = np.reshape(b2, (-1, 10))
+        b3 = np.loadtxt('/mnt/Storage/FileRecv/Navigation/组合导航数据处理/机器人数据/20201009-信操数据/result/33/result.err')
+        b3 = np.reshape(b3, (-1, 10))
+        b4 = np.loadtxt('/mnt/Storage/FileRecv/Navigation/组合导航数据处理/机器人数据/20201009-信操数据/result/44/result.err')
+        b4 = np.reshape(b4, (-1, 10))
+        y_ticks1 = np.arange(-2.5, 3.6, 1)
+        y_ticks11 = np.arange(-2.5, 3.6, 1)
+        y_ticks2 = np.arange(-0.25, 0.26, 0.05)
+        y_ticks3 = np.arange(-1.0, 3.1, 1)
 
 fig1 = plt.figure(num=1, figsize=(20, 16))
 
@@ -84,8 +114,16 @@ plt.yticks(y_ticks1/10)
 
 plt.tight_layout()
 fig1.align_ylabels()
-plt.savefig('/mnt/Storage/FileRecv/Navigation/组合导航数据处理/机器人数据/20201009-信操数据/result/4/poserr.svg',dpi=600,format='svg')
-
+if platform.system() == "Windows":
+    if define == 1:
+        plt.savefig('E:/FileRecv/Navigation/组合导航数据处理/机器人数据/20201009-信操数据/result/4/poserr.svg', dpi=600, format='svg')
+    else:
+        plt.savefig('E:/FileRecv/Navigation/组合导航数据处理/机器人数据/20201009-信操数据/result/44/poserr.svg', dpi=600, format='svg')
+else:
+    if define == 1:
+        plt.savefig('/mnt/Storage/FileRecv/Navigation/组合导航数据处理/机器人数据/20201009-信操数据/result/4/poserr.svg', dpi=600, format='svg')
+    else:
+        plt.savefig('/mnt/Storage/FileRecv/Navigation/组合导航数据处理/机器人数据/20201009-信操数据/result/44/poserr.svg', dpi=600, format='svg')
 fig2 = plt.figure(num=2, figsize=(20, 16))
 
 plt.subplot(411)
@@ -138,8 +176,16 @@ plt.yticks(y_ticks2)
 
 plt.tight_layout()
 fig2.align_ylabels()
-plt.savefig('/mnt/Storage/FileRecv/Navigation/组合导航数据处理/机器人数据/20201009-信操数据/result/4/velerr.svg',dpi=600,format='svg')
-
+if platform.system() == "Windows":
+    if define == 1:
+        plt.savefig('E:/FileRecv/Navigation/组合导航数据处理/机器人数据/20201009-信操数据/result/4/velerr.svg', dpi=600, format='svg')
+    else:
+        plt.savefig('E:/FileRecv/Navigation/组合导航数据处理/机器人数据/20201009-信操数据/result/44/velerr.svg', dpi=600, format='svg')
+else:
+    if define == 1:
+        plt.savefig('/mnt/Storage/FileRecv/Navigation/组合导航数据处理/机器人数据/20201009-信操数据/result/4/velerr.svg', dpi=600, format='svg')
+    else:
+        plt.savefig('/mnt/Storage/FileRecv/Navigation/组合导航数据处理/机器人数据/20201009-信操数据/result/44/velerr.svg', dpi=600, format='svg')
 fig3 = plt.figure(num=3, figsize=(20, 16))
 
 plt.subplot(411)
@@ -192,4 +238,13 @@ plt.yticks(y_ticks3)
 
 plt.tight_layout()
 fig3.align_ylabels()
-plt.savefig('/mnt/Storage/FileRecv/Navigation/组合导航数据处理/机器人数据/20201009-信操数据/result/4/atterr.svg',dpi=600,format='svg')
+if platform.system() == "Windows":
+    if define == 1:
+        plt.savefig('E:/FileRecv/Navigation/组合导航数据处理/机器人数据/20201009-信操数据/result/4/atterr.svg', dpi=600, format='svg')
+    else:
+        plt.savefig('E:/FileRecv/Navigation/组合导航数据处理/机器人数据/20201009-信操数据/result/44/atterr.svg', dpi=600, format='svg')
+else:
+    if define == 1:
+        plt.savefig('/mnt/Storage/FileRecv/Navigation/组合导航数据处理/机器人数据/20201009-信操数据/result/4/atterr.svg', dpi=600, format='svg')
+    else:
+        plt.savefig('/mnt/Storage/FileRecv/Navigation/组合导航数据处理/机器人数据/20201009-信操数据/result/44/atterr.svg', dpi=600, format='svg')
